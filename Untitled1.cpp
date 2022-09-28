@@ -3,34 +3,19 @@
 #include <algorithm>
 using namespace std;
 
+void thap(int n, int trai, int giua,int phai){
+	if(n == 1){
+		cout << "chuyen " << trai << " -> " << phai << endl;
+		return;
+	}
+	thap(n-1,trai, phai, giua);
+	thap(1,trai,giua,phai);
+	thap(n-1,giua,trai,phai);
+}
 
 int main()
 {
     int n;
-    int count = 0;
-    cin >> n;
-    int *a = new int[n];
-    for (int i = 0; i < n; i++)
-        cin >> a[i];
-    
-    sort(a,a+n);
-    int D = (a[n-1] - a[0])/4;
-    for(int d = 1; d <= D; d++){
-		for(int i = 0; i < n-4; i++){
-    		int k = 1;
-    		int cur = a[i];
-			for(int j = i + 1; j < n; j++){
-				if(a[j] - cur == d){
-    				k++;
-					cur = a[j];
-				}
-				if(k == 5){
-					count++;
-					break;
-				}
-				
-			}
-		}
-	}
-	cout << count;
+	cin >> n;
+	thap(n,1,2,3);
 }

@@ -1,19 +1,15 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
-const int CAP = 20000000;
-
-vector<long long> G(CAP,0);
-
 int main()
 {
-    G[1] = 1;
-    G[2] = 1;
-    G[3] = 3;
     int n;
     cout << "Nhap n = ";
     cin >> n;
+    vector<long long> G(n+8);
+    G[1] = 1;
+    G[2] = 1;
+    G[3] = 3;
     for(int i = 4; i <= n ; i+=4){
         int k = i / 4;
         G[i] = G[i/2];
