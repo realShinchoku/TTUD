@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+int subarram(int a[], int m, int n){
+
+    
+}
+
 int main(){
     int m,n;
     cout << "Nhap m = "; cin >> m;
@@ -10,5 +15,5 @@ int main(){
         cout << "a["<<i<<"] = ";
         cin >> a[i];
     }
-    cout << "Co tat ca ";
+    cout << "Co tat ca " << subarram(a,m,n) << " cach phan tich.";
 }
